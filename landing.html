@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crimson</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-light">
+          <li><a href="#section1">Section 1</a></li>
+          <li><a href="#section2">Section 2</a></li>
+          <li><a href="#section3">Section 3</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+<div id="section1" class="container-fluid">
+  <p>Link goes here</p>
+</div>
+<div id="section2" class="container-fluid">
+  <p>About Project</p>
+</div>
+<div id="section3" class="container-fluid">
+  <p>About Devs</p>
+</div>
+</body>
+<style>
+  body {
+    position: relative; 
+  }
+  #section1 {
+    padding-top:55px;
+    height:850px;
+    color: #fff; 
+    background-color: #1E88E5;
+  }
+  #section2 {
+    padding-top:55px;
+    height:850px;
+    color: #fff; 
+    background-color: #673ab7;
+  }
+  #section3 {
+    padding-top:55px;
+    height:850px;
+    color: #fff; 
+    background-color: #ff9800;
+  }
+  </style>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+  $("#myNavbar a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+</html>

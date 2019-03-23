@@ -3,8 +3,31 @@ import csv
 import requests
 import time
 from bs4 import BeautifulSoup
+import re
 
-url = "https://www.nytimes.com/2019/03/22/world/asia/indonesia-boeing-737.html?action=click&module=Top%20Stories&pgtype=Homepage"
+url = "https://www.cnbc.com/2019/03/21/beau-jessup-teen-pays-college-fees-by-naming-chinese-babies.html"
+art = []
+
+#Cleaning The Data
+def cleaning(art):
+    text = art[1]
+    # remove html markup
+    text = re.sub("(<.*?>)","",text)
+    #remove non-ascii and digits
+    text = re.sub("(\\W)"," ",text)    
+    #remove whitespace
+    #text = text.strip()
+
+    art[1] = text
+
+    return
+
+
+#Manual Entry
+def manualEntry():
+    title = ""
+    body = ""
+
 
 #Defining the Article Class
 class Article:
@@ -19,7 +42,6 @@ class Article:
 def scrape(url):
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
     p = ""
-    art = []
     response = requests.get(url, headers = headers)
     soup = BeautifulSoup(response.text, "html.parser")
     art.append(soup.findAll('h2')[0].string)
@@ -30,9 +52,10 @@ def scrape(url):
     if art[0] == "We've detected unusual activity from your computer network":
        manualEntry()
        return
-    else:
-        print(art)
+    #else:
+        #print(art)
+    art.append(url)
+    cleaning(art)
+    #print(art)
      
-
-
 scrape(url)

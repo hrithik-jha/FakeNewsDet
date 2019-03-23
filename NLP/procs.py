@@ -25,14 +25,17 @@ def extractData():
     date = []
     for u in range(0, len(urls) - 2):
         if re.match(r"[0-9]{4}", urls[u]):
+            print(urls[u])
             if re.match(r"[0-9]{2}", urls[u + 1]):
-                date.append(urls[u + 2])
+                date.append(urls[u + 1])
+                #print(urls[u + 1])
             if re.match(r"[0-9]{2}", urls[u + 2]):    
                 date.append(urls[u + 2])
-            if len(urls) == 1 or len(urls) == 2:
-                date.append(urls[u])
+                #print(urls[u + 2])
+            date.append(urls[u])
 
     features.append(["OG DATE", date])
+    #print(date)
 
     #Name Entity Recognition
     for i in document.ents:

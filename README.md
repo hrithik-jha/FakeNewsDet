@@ -1,1 +1,3 @@
-This is for C2C.
+A Fake News Detections based on web scraping.
+Written in Python, UI: Web.
+Built duiring Code 2 Create.

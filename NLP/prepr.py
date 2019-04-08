@@ -5,7 +5,7 @@ import time
 from bs4 import BeautifulSoup
 import re
 
-url = "https://www.cnbc.com/2019/03/21/beau-jessup-teen-pays-college-fees-by-naming-chinese-babies.html"
+url = "https://www.abeldanger.org/if-you-are-not-with-israel-you-are-a-terrorist-or-are-antisemitic/"
 art = []
 
 #Cleaning The Data
@@ -25,8 +25,10 @@ def cleaning(art):
 
 #Manual Entry
 def manualEntry():
-    title = ""
+    print("Connection has been denied, please enter manually.")
     body = ""
+    body = input()
+    return body
 
 
 #Defining the Article Class
@@ -50,8 +52,8 @@ def scrape(url):
     art.append(p)
     
     if art[0] == "We've detected unusual activity from your computer network":
-       manualEntry()
-       return
+       p = manualEntry()
+       art.append(p)
     #else:
         #print(art)
     art.append(url)

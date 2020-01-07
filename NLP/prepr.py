@@ -5,7 +5,7 @@ import time
 from bs4 import BeautifulSoup
 import re
 
-url = "https://www.abeldanger.org/if-you-are-not-with-israel-you-are-a-terrorist-or-are-antisemitic/"
+url = "https://www.cnbc.com/2019/04/09/india-elections-congress-minimum-income-support-scheme.html"
 art = []
 
 #Cleaning The Data

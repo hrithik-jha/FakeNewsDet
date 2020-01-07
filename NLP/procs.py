@@ -13,14 +13,11 @@ snlp = spacy.load('en_core_web_sm')
 document = snlp(art[1])
 features = []
 
-api_key = 'AIzaSyDzb1P8F_G4Jz6PRrcn5J3HhtdyW37j_QA'
-search_id = '007134015131333087432:wjuyudu_zyw'
+#Scraping Google Results
+api_key = ''
+search_id = ''
 url = 'https://www.googleapis.com/customsearch/v1?'
 
-#Initializing a score for the article
-score = 0
-
-#Scraping Google Results
 def GoogleRes(strn):
     payload = {
         'key': api_key,
@@ -52,14 +49,10 @@ def extractData():
                 #print(urls[u + 2])
             date.append(urls[u])
 
-    #features.append(["OG DATE", date])
-    #print(date)
-
     #Name Entity Recognition
     for i in document.ents:
         features.append([i.label_, str(i)])
-
-    #print(features)    
+  
     
 extractData()
 

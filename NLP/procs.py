@@ -30,11 +30,11 @@ def GoogleRes(strn):
 
 #Function to extract details
 def extractData():
-    urls = art[2].split('/')
+    #urls = art[2].split('/')
     
     #Finding the Source
-    source = urls[2]
-    features.append(["SOURCE", str(source)])
+    #source = urls[2]
+    #features.append(["SOURCE", str(source)])
 
     #Finding the Date
     date = []

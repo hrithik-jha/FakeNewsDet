@@ -5,7 +5,7 @@ import time
 from bs4 import BeautifulSoup
 import re
 
-url = "https://www.cnbc.com/2019/04/09/india-elections-congress-minimum-income-support-scheme.html"
+url = "https://timesofgeneva.com/house-launches-busy-week-in-trump-impeachment-probe/"
 art = []
 
 #Cleaning The Data
@@ -46,7 +46,7 @@ def scrape(url):
     p = ""
     response = requests.get(url, headers = headers)
     soup = BeautifulSoup(response.text, "html.parser")
-    art.append(soup.findAll('h2')[0].string)
+    #art.append(soup.findAll('h2')[0].string)
     for i in range(0, len(soup.findAll('p'))):
         p += soup.findAll('p')[i].text
     art.append(p)

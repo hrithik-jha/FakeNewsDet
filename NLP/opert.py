@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from prepr import art
 import procs
 
-#Importing the Dataset
+#Importing the Dataset 
 df = pd.read_csv(r'C:\\Users\\Hrithik Jha\\FakeNewsDet\\Data\\train.csv')
 df.dropna()
 

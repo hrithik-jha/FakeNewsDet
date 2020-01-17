@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 
+#Listening for requests
 app = Flask(__name__)
 @app.route('/')
 def hello():

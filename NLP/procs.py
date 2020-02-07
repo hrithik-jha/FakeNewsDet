@@ -36,19 +36,6 @@ def extractData():
     #source = urls[2]
     #features.append(["SOURCE", str(source)])
 
-    #Finding the Date
-    date = []
-    '''for u in range(0, len(urls) - 2):
-        if re.match(r"[0-9]{4}", urls[u]):
-            print(urls[u])
-            if re.match(r"[0-9]{2}", urls[u + 1]):
-                date.append(urls[u + 1])
-                #print(urls[u + 1])
-            if re.match(r"[0-9]{2}", urls[u + 2]):    
-                date.append(urls[u + 2])
-                #print(urls[u + 2])
-            date.append(urls[u])
-    '''
     #Name Entity Recognition
     for i in document.ents:
         features.append([i.label_, str(i)])

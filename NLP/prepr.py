@@ -5,7 +5,7 @@ import time
 from bs4 import BeautifulSoup
 import re
 
-url = "https://timesofgeneva.com/house-launches-busy-week-in-trump-impeachment-probe/"
+url = "https://www.cnbc.com/2020/02/07/tidjane-thiam-to-step-down-as-credit-suisse-ceo-on-feb-14.html"
 art = []
 
 #Cleaning The Data
@@ -29,16 +29,6 @@ def manualEntry():
     body = ""
     body = input()
     return body
-
-
-#Defining the Article Class
-class Article:
-    def __init__(self, Webs, Journ, Date, Place, Ent):
-        self.Webs = Webs
-        self.Journ = Journ
-        self.Date = Date
-        self.Place = Place
-        self.Ent = Ent
 
 #Scraping
 def scrape(url):

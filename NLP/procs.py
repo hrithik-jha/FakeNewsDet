@@ -58,9 +58,9 @@ extractData()
 
 featurettes = []
 for i in features:
-    if i[0] == "ORG" or i[0] == "PERSON":
+    if i[1] not in featurettes and i[0] == "PERSON" or i[0] == "ORG":
         featurettes.append(i[1])
-#print(featurettes)
+print(featurettes)
 
 counts = Counter(featurettes).most_common(5)
 print(counts)
@@ -70,7 +70,7 @@ for i in range(0, len(counts)):
     if i != len(counts) - 1:
         strn += "+"
 
-GoogleRes(strn)
+#GoogleRes(strn)
 
 api_req = "https://newsapi.org/v2/top-headlines?"
 api_keyy = "&apiKey=9bb879b3283d4f90b7202bd015ccf9af"

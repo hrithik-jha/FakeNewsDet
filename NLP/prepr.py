@@ -10,7 +10,7 @@ art = []
 
 #Cleaning The Data
 def cleaning(art):
-    text = art[1]
+    text = art[0]
     # remove html markup
     text = re.sub("(<.*?>)","",text)
     #remove non-ascii and digits
@@ -18,7 +18,7 @@ def cleaning(art):
     #remove whitespace
     #text = text.strip()
 
-    art[1] = text
+    art[0] = text
 
     return
 
@@ -56,7 +56,7 @@ def scrape(url):
        art.append(p)
     #else:
         #print(art)
-    art.append(url)
+    #art.append(url)
     cleaning(art)
     #print(art)
      

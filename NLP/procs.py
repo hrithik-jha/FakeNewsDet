@@ -10,7 +10,7 @@ import requests
 
 #Initializing SpaCy
 snlp = spacy.load('en_core_web_sm')
-document = snlp(art[1])
+document = snlp(art[0])
 features = []
 
 #Scraping Google Results
@@ -38,7 +38,7 @@ def extractData():
 
     #Finding the Date
     date = []
-    for u in range(0, len(urls) - 2):
+    '''for u in range(0, len(urls) - 2):
         if re.match(r"[0-9]{4}", urls[u]):
             print(urls[u])
             if re.match(r"[0-9]{2}", urls[u + 1]):
@@ -48,7 +48,7 @@ def extractData():
                 date.append(urls[u + 2])
                 #print(urls[u + 2])
             date.append(urls[u])
-
+    '''
     #Name Entity Recognition
     for i in document.ents:
         features.append([i.label_, str(i)])

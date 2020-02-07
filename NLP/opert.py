@@ -27,5 +27,5 @@ model1 = LogisticRegression()
 model1.fit(X_train_vectorized, y_train)
 
 #Predicting the article obtained from the URL
-prediction = model1.predict(vect.transform([art[1]]))
+prediction = model1.predict(vect.transform([art[0]]))
 print("Prediction: ", prediction)

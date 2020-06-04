@@ -20,7 +20,7 @@ def cleaning(art):
 
     art[0] = text
 
-    return
+    return art
 
 
 #Manual Entry
@@ -32,6 +32,7 @@ def manualEntry():
 
 #Scraping
 def scrape(url):
+    print("Fetching article...")
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
     p = ""
     response = requests.get(url, headers = headers)

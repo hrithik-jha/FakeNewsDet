@@ -4,7 +4,7 @@ import spacy
 import re
 from bs4 import BeautifulSoup
 from newsapi import NewsApiClient
-from prepr import art, Article
+from prepr import art
 from collections import Counter
 import requests
 
@@ -12,6 +12,7 @@ import requests
 snlp = spacy.load('en_core_web_sm')
 document = snlp(art[0])
 features = []
+remove_words = ['CNBC', 'Bloomberg', 'nytimes', 'bbc', 'reuters', 'guardian', 'forbes', 'fool', 'times of india', 'quartz', 'politifact']
 
 #Scraping Google Results
 api_key = ''
@@ -40,15 +41,18 @@ def extractData():
     for i in document.ents:
         features.append([i.label_, str(i)])
   
-    
+#Name Entity Recognition    
 extractData()
 
+
+#Initializing Features
 featurettes = []
 for i in features:
-    if i[1] not in featurettes and i[0] == "PERSON" or i[0] == "ORG":
+    if i[1] not in featurettes and i[1] not in remove_words and i[0] == "PERSON" or i[0] == "ORG":
         featurettes.append(i[1])
 print(featurettes)
 
+#Counting 5 most common relevant terms for finding similar articles
 counts = Counter(featurettes).most_common(5)
 print(counts)
 strn = ""
@@ -57,15 +61,7 @@ for i in range(0, len(counts)):
     if i != len(counts) - 1:
         strn += "+"
 
-#GoogleRes(strn)
-
-api_req = "https://newsapi.org/v2/top-headlines?"
-api_keyy = "&apiKey=9bb879b3283d4f90b7202bd015ccf9af"
-
-'''top_headlines = newsapi.get_top_headlines(
-        q='Project Kuiper',
-        language='en',
-        )
-print(top_headlines)
-'''
-#print(features)
+if api_key == '' or search_id == '':
+    print("Need Google API keys for similar article search.")
+else:
+    GoogleRes(strn)

@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from sklearn import svm
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -28,4 +29,8 @@ model1.fit(X_train_vectorized, y_train)
 
 #Predicting the article obtained from the URL
 prediction = model1.predict(vect.transform([art[0]]))
-print("Prediction: ", prediction)
+if prediction == [0]:
+    state = 'Real'
+else:
+    state = 'Fake'
+print("Prediction: ", state)

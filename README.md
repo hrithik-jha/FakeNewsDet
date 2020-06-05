@@ -11,6 +11,9 @@ To receive similar Google news articles, enter Google key credentials.
 Run `python opert.py` in `/NLP` folder. \
 All output will be printed in the terminal.
 
+## Viz
+The `plots.py` plots graphs for better inference of the cleaned article after applying NER to identify most commonly written Names or Entities.
+
 ## Doc map
 +-API\
 L___app.py\
@@ -22,4 +25,6 @@ L___opert.py\
 L___prepr.py\
 L___procs.py\
 L___FakeNewsPred.sav\
++-Viz\
+L___plots.py
 +-README.md

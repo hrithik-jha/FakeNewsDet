@@ -12,7 +12,7 @@ Run `python opert.py` in `/NLP` folder. \
 All output will be printed in the terminal.
 
 ## Viz
-The `plots.py` plots graphs for better inference of the cleaned article after applying NER to identify most commonly written Names or Entities.
+The `plots.py` plots graphs for better inference of the cleaned article after applying NER to identify most commonly written Names or Entities. Add custom word disambiguation for plotting.
 
 ## Doc map
 +-API\

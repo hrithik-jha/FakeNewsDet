@@ -26,5 +26,6 @@ L___prepr.py\
 L___procs.py\
 L___FakeNewsPred.sav\
 +-Viz\
-L___plots.py
-+-README.md
+L___plots.py \
++-README.md \
++-requirements.txt

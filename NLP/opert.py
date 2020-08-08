@@ -8,7 +8,7 @@ from prepr import art
 import procs
 
 #Importing the Dataset 
-df = pd.read_csv(r'C:\\Users\\Hrithik Jha\\FakeNewsDet\\Data\\train.csv')
+df = pd.read_csv(r'../Data/train.csv')
 df.dropna()
 
 #Splitting for Train and Test

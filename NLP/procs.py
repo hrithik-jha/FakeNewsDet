@@ -14,7 +14,7 @@ document = snlp(art[0])
 features = []
 
 # Removing the very common words
-# remove_words = ['CNBC', 'Bloomberg', 'nytimes', 'bbc', 'reuters', 'guardian', 'forbes', 'fool', 'times of india', 'quartz', 'politifact']
+remove_words = ['CNBC', 'Bloomberg', 'nytimes', 'bbc', 'reuters', 'guardian', 'forbes', 'fool', 'times of india', 'quartz', 'politifact']
 
 #Scraping Google Results
 api_key = ''
@@ -50,7 +50,7 @@ extractData()
 #Initializing Features
 featurettes = []
 for i in features:
-    if i[1] not in featurettes and i[1] not in remove_words and i[0] == "PERSON" or i[0] == "ORG":
+    if i[0] == "PERSON" or i[0] == "ORG":
         featurettes.append(i[1])
 print("Extracted features...") 
 print(featurettes)

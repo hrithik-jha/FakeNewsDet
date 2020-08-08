@@ -5,7 +5,7 @@ import time
 from bs4 import BeautifulSoup
 import re
 
-url = "https://www.cnbc.com/2020/02/07/tidjane-thiam-to-step-down-as-credit-suisse-ceo-on-feb-14.html"
+url = "https://www.cnbc.com/2020/08/08/as-trump-bans-wechat-some-in-china-turn-to-encrypted-messaging-app-signal.html"
 art = []
 
 #Cleaning The Data

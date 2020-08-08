@@ -12,7 +12,9 @@ import requests
 snlp = spacy.load('en_core_web_sm')
 document = snlp(art[0])
 features = []
-remove_words = ['CNBC', 'Bloomberg', 'nytimes', 'bbc', 'reuters', 'guardian', 'forbes', 'fool', 'times of india', 'quartz', 'politifact']
+
+# Removing the very common words
+# remove_words = ['CNBC', 'Bloomberg', 'nytimes', 'bbc', 'reuters', 'guardian', 'forbes', 'fool', 'times of india', 'quartz', 'politifact']
 
 #Scraping Google Results
 api_key = ''
@@ -50,6 +52,7 @@ featurettes = []
 for i in features:
     if i[1] not in featurettes and i[1] not in remove_words and i[0] == "PERSON" or i[0] == "ORG":
         featurettes.append(i[1])
+print("Extracted features...") 
 print(featurettes)
 
 #Counting 5 most common relevant terms for finding similar articles

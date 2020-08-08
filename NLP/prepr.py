@@ -25,14 +25,14 @@ def cleaning(art):
 
 #Manual Entry
 def manualEntry():
-    print("Connection has been denied, please enter manually.")
+    print("Connection has been denied, please obtain the article text manually.")
     body = ""
     body = input()
     return body
 
 #Scraping
 def scrape(url):
-    print("Fetching article...")
+    print("Fetching article: " + url)
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
     p = ""
     response = requests.get(url, headers = headers)

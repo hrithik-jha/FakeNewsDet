@@ -9,13 +9,13 @@ app = Flask(__name__)
 def hello():
     return "Server is listening..."
 
-@app.route('/url', methods=["POST"])
+@app.route('/url', methods=["GET"])
 def art_id():
     if 'url' in request.args:
         url = request.args.get('url')
     else:
         return "Error: No URL field provided."
     
-    return jsonify({'prediction': l})
+    return jsonify({'prediction': "Functionality not added yet"})
 
 app.run(debug=True)

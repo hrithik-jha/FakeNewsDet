@@ -15,17 +15,19 @@ All output will be printed in the terminal.
 The `plots.py` plots graphs for better inference of the cleaned article after applying NER to identify most commonly written Names or Entities. Add custom word disambiguation for plotting.
 
 ## Doc map
-+-API\
-L___app.py\
-+-Data\
-L___test.csv\
-L___train.csv\
-+-NLP\
-L___opert.py\
-L___prepr.py\
-L___procs.py\
-L___FakeNewsPred.sav\
-+-Viz\
-L___plots.py \
-+-README.md \
-+-requirements.txt
+```
+└── API
+    └── app.py
+└── Data
+    ├── test.csv
+    └── train.csv
+└── NLP
+    ├── opert.py
+    ├── prepr.py
+    ├── procs.py
+    └── FakeNewsPred.py
+└── Viz
+    └── plots.py
+├── README.md
+└── requirements.txt
+```
